@@ -1,5 +1,7 @@
 package cbudtz.uge02;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,8 +16,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        butt = (Button) findViewById(R.id.button);
+        butt = (Button) findViewById(R.id.main_buttonringtilenven);
         butt.setOnClickListener(this);
+        findViewById(R.id.main_buttongalge).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, GalgeLeg.class));
+            }
+        });
     }
 
     @Override
@@ -42,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Intent i = new Intent(Intent.ACTION_DIAL);
+        i.setData(Uri.parse("tel: 50108700"));
+
+        startActivity(i);
 
     }
 }
