@@ -100,7 +100,7 @@ public class GalgeLeg extends AppCompatActivity implements View.OnClickListener,
                 galgeBillede.setBackgroundResource(R.drawable.forkert6);
                 break;
             default:
-                Log.d("antal forkerte:","Somethings wrong!");
+                Log.d("Antal forkerte:","Somethings wrong!");
                 break;
         }
         letterBox.setText("");
