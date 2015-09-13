@@ -4,12 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GalgeLeg extends AppCompatActivity implements View.OnClickListener, TextWatcher {
@@ -18,6 +20,7 @@ public class GalgeLeg extends AppCompatActivity implements View.OnClickListener,
     EditText letterBox;
     TextView wordBox;
     TextView infoBox;
+    ImageView galgeBillede;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class GalgeLeg extends AppCompatActivity implements View.OnClickListener,
         letterBox.addTextChangedListener(this);
         wordBox = (TextView) findViewById(R.id.galge_text);
         infoBox = (TextView) findViewById(R.id.galge_infobox);
+        galgeBillede = (ImageView) findViewById(R.id.galge_galgebillede);
+        //Set focus and enable keyb
         letterBox.requestFocus();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
@@ -71,6 +76,33 @@ public class GalgeLeg extends AppCompatActivity implements View.OnClickListener,
 
         }
         if (gctrl.erSpilletTabt()){infoBox.setText("Desværre - prøv igen :(");gctrl.nulstil();}
+        int forkerte = gctrl.getAntalForkerteBogstaver();
+        switch (forkerte){
+            case 0:
+                galgeBillede.setBackgroundResource(R.drawable.galge);
+                break;
+            case 1:
+                galgeBillede.setBackgroundResource(R.drawable.forkert1);
+                break;
+            case 2:
+                galgeBillede.setBackgroundResource(R.drawable.forkert2);
+                break;
+            case 3:
+                galgeBillede.setBackgroundResource(R.drawable.forkert3);
+                break;
+            case 4:
+                galgeBillede.setBackgroundResource(R.drawable.forkert4);
+                break;
+            case 5:
+                galgeBillede.setBackgroundResource(R.drawable.forkert5);
+                break;
+            case 6:
+                galgeBillede.setBackgroundResource(R.drawable.forkert6);
+                break;
+            default:
+                Log.d("antal forkerte:","Somethings wrong!");
+                break;
+        }
         letterBox.setText("");
 
 
