@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Intent i = new Intent(Intent.ACTION_DIAL);
-        i.setData(Uri.parse("tel: 50108700"));
+        i.setData(Uri.parse("tel: 20711441"));
 
         startActivity(i);
 

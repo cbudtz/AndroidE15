@@ -10,7 +10,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/RingTilFar"
+        android:text="@string/RingTilEnVen"
         android:id="@+id/main_buttonringtilenven"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"

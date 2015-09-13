@@ -12,4 +12,5 @@
     <string name="title_activity_galge_leg">GalgeLeg</string>
     <string name="RingTilMor">Ring TIL MOR!</string>
     <string name="RingTilFar">Ring Til Far</string>
+    <string name="RingTilEnVen">Ring til en ven</string>
 </resources>
